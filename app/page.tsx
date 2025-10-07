@@ -26,17 +26,62 @@ export default function Home() {
     <LayoutVariants.Landing>
       <div className="text-center space-y-8">
         <div className="space-y-4">
-          <h1 className="text-4xl font-bold tracking-tight">
-            Welcome to {config.app.name}
+          <h1 className="text-5xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">
+            RR Real Estate Portfolio
           </h1>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            {config.app.description}
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            Discover luxurious student housing and premium rental properties tailored for the modern college experience.
           </p>
         </div>
 
-        {/* Authentication Section */}
+        {/* Featured Student Housing/Rental Properties Section */}
+        <section className="py-16 bg-surface rounded-lg shadow-lg">
+          <h2 className="text-4xl font-bold tracking-tight mb-8 text-text">
+            Featured Student Housing & Rental Properties
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4">
+            {/* Placeholder for property cards */}
+            <Card className="bg-background border-border rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 ease-in-out">
+              <img src="https://images.pexels.com/photos/276724/pexels-photo-276724.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Property 1" className="w-full h-48 object-cover"/>
+              <CardHeader>
+                <CardTitle className="text-2xl font-semibold text-text">Modern Loft Apartments</CardTitle>
+                <CardDescription className="text-textSecondary">Downtown Campus Living</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-textSecondary mb-4">Spacious, fully furnished lofts with city views, perfect for students seeking a vibrant urban lifestyle.</p>
+                <Button className="w-full bg-primary hover:bg-primary/90 text-white">View Details</Button>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-background border-border rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 ease-in-out">
+              <img src="https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Property 2" className="w-full h-48 object-cover"/>
+              <CardHeader>
+                <CardTitle className="text-2xl font-semibold text-text">Suburban Student Homes</CardTitle>
+                <CardDescription className="text-textSecondary">Quiet Neighborhood Retreat</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-textSecondary mb-4">Comfortable homes with private yards, ideal for group living and a peaceful study environment.</p>
+                <Button className="w-full bg-primary hover:bg-primary/90 text-white">View Details</Button>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-background border-border rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 ease-in-out">
+              <img src="https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Property 3" className="w-full h-48 object-cover"/>
+              <CardHeader>
+                <CardTitle className="text-2xl font-semibold text-text">Luxury Studio Apartments</CardTitle>
+                <CardDescription className="text-textSecondary">Modern & Convenient</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-textSecondary mb-4">Sleek, fully equipped studio apartments offering privacy and all amenities for independent student living.</p>
+                <Button className="w-full bg-primary hover:bg-primary/90 text-white">View Details</Button>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+
+        {/* Authentication Section - Retained for potential future use, but hidden by default */}
         {isAuthEnabled && (
-          <div className="space-y-4">
+          <div className="space-y-4 hidden"> {/* Hidden for now */}
             {isAuthenticated ? (
               <div className="p-4 bg-green-50 border border-green-200 rounded-lg">
                 <p className="text-green-800">
@@ -72,17 +117,8 @@ export default function Home() {
           </div>
         )}
 
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button size="lg">
-            Get Started
-          </Button>
-          <Button variant="outline" size="lg">
-            Learn More
-          </Button>
-        </div>
-
-        {/* Feature Status */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-12">
+        {/* Feature Status - Retained for debugging/info, but can be hidden */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-12 hidden"> {/* Hidden for now */}
           <Card>
             <CardHeader className="pb-2">
               <CardTitle className="text-sm font-medium">Authentication</CardTitle>
@@ -140,8 +176,8 @@ export default function Home() {
           </Card>
         </div>
 
-        {/* Provider Status */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+        {/* Provider Status - Retained for debugging/info, but can be hidden */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8 hidden"> {/* Hidden for now */}
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center space-x-2">
@@ -188,8 +224,8 @@ export default function Home() {
           </Card>
         </div>
 
-        {/* Configuration Info */}
-        <div className="mt-12 p-6 bg-muted rounded-lg">
+        {/* Configuration Info - Retained for debugging/info, but can be hidden */}
+        <div className="mt-12 p-6 bg-muted rounded-lg hidden"> {/* Hidden for now */}
           <h3 className="text-lg font-semibold mb-4">Configuration</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
             <div>
